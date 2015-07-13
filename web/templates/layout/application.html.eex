@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Hello Phoenix!</title>
+    <link rel="stylesheet" href="/css/phoenix.css">
+    <link rel="stylesheet" href="/css/quotes.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="/js/jquery.restfulizer.js"></script>
+    <script src="/js/quotes.js"></script>
+  </head>
+
+  <body class='site container'>
+    <header>
+      <div class="col-xs-6">
+        <div class="circle">
+          <br />
+          Elixir &
+          <br />
+          Erlang
+          <br />
+          Rock!
+        </div>
+      </div>
+
+      <div class="col-xs-6 text-right">
+        <div id="header-links">
+          <a href="<%= quote_path(@conn, :new) %>">Contribute</a>
+        </div>
+      </div>
+    </header>
+
+    <hr class="clear col-xs-12"/>
+
+    <main class="site-content">
+      <%= @inner %>
+    </main>
+
+    <footer>
+      <div class="col-xs-6">
+        <a href="<%= quote_path(@conn, :homepage)%>">
+          This isn't enough, I need more
+        </a>
+      </div>
+      <div class="col-xs-6 text-right">
+        <a href="http://elixir-lang.org">
+          <img src="/images/elixir.png"/>
+        </a>
+        <a href="http://www.phoenixframework.org/">
+          <img src="/images/phoenix.png" />
+        </a>
+      </div>
+    </footer>
+
+    <script>
+      $(function() {
+        $(".rest").click(function () {
+          $('form').submit(function (event) {
+            var input = $("<input>").attr("type", "hidden").attr("name", "csrf_token").val("<%= csrf_token(@conn) %>");
+
+            $(event.target).append($(input));
+          });
+        });
+
+        $(".rest").restfulizer({});
+      });
+    </script>
+  </body>
+</html>
