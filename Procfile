@@ -1,1 +1,1 @@
-web: mix compile.protocols && mix phoenix.server
+web: mix compile.protocols && elixir -pa _build/prod/consolidated -S mix phoenix.start
