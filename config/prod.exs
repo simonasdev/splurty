@@ -19,6 +19,8 @@ config :splurty, Splurty.Endpoint,
 # Do not pring debug messages in production
 config :logger, level: :info
 
+config :phoenix, :database, url: "postgres://hpbwuoktgufbhk:eFIo7QbS-NYgI3GOYctpmQVtrr@ec2-107-22-175-206.compute-1.amazonaws.com:5432/d8pmi2v6c5gv22"
+
 # ## Using releases
 #
 # If you are doing OTP releases, you need to instruct Phoenix
