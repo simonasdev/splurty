@@ -12,7 +12,7 @@ use Mix.Config
 # disk for the key and cert.
 
 config :splurty, Splurty.Endpoint,
-  url: [host: "example.com"],
+  url: [host: "splurty-sample.herokuapp.com"],
   http: [port: System.get_env("PORT")],
   secret_key_base: "B63HIlHs1umvS+7y2cjBQAckNV54rbV4Ipf5hZ+xrp4Vl9qRW4v6wqdsAJiStmEy"
 
